@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<typesystem package="TestBindings">
+    <primitive-type name="int"/>
+    <primitive-type name="bool"/>
+    <primitive-type name="char"/>
+    <primitive-type name="float"/>
+    <primitive-type name="double"/>
+    <primitive-type name="qreal"/>
+    <primitive-type name="qsizetype"/>
+    <primitive-type name="qint64"/>
+    <primitive-type name="unsigned int"/>
+
+    <object-type name="MyObject" />
+
+    <value-type name="QEvent" />
+    <value-type name="QObject" />
+
+    <value-type name="QString" />
+    <value-type name="QByteArray" />
+    <value-type name="QList" />
+    <value-type name="QHash" />
+    <value-type name="QMap" />
+    <value-type name="QSet" />
+    <value-type name="QVariant">
+        <add-function signature="fromObject(QObject*)" return-type="QVariant" static="yes">
+            <inject-code class="target" position="beginning" file="glue/qvariant.cpp" snippet="qvariant-fromObject"/>
+        </add-function>
+    </value-type>
+    <value-type name="QColor" />
+
+    <enum-type name="MyEnumClass" />
+
+    <value-type name="QCoreApplication">
+        <enum-type identified-by-value="ApplicationFlags" />
+    </value-type>
+    <value-type name="QGuiApplication" />
+    <value-type name="QApplication" />
+    <namespace-type name="Qt">
+        <enum-type name="EventPriority" />
+    </namespace-type>
+
+    <namespace-type name="TestTargetNS">
+        <value-type name="POD" />
+        <value-type name="DestructorCounter" />
+        <object-type name="DerivedFromPureAbstract" />
+        <object-type name="Derived2FromPureAbstract" />
+        <object-type name="MyBaseClass">
+            <enum-type name="MyEnum" />
+            <enum-type name="ProtectedEnum" />
+            <enum-type identified-by-value="AnonymousEnumerator1" />
+            <enum-type identified-by-value="AnonymousEnumerator2" />
+            <enum-type identified-by-value="AnonymousEnumerator3" />
+            <modify-function signature="renamedMethod1()" rename="renamedMethod2"/>
+            <modify-function signature="renamedVirtual1()" rename="renamedVirtual2"/>
+        </object-type>
+        <object-type name="PureAbstract">
+            <modify-function signature="renamedPureVirtual()" rename="renamedPureVirtual1"/>
+            <modify-function signature="renamedStatic()" rename="renamedStatic1"/>
+        </object-type>
+        <object-type name="MyDerivedClass" />
+        <object-type name="StructWithStructAsMember" />
+        <function signature="namespaceLevelGlobalFunction()" />
+        <enum-type name="NameSpaceLevelEnum" />
+    </namespace-type>
+
+    <namespace-type name="EmptyNameSpace" />
+    <namespace-type name="AnotherNamespace">
+        <enum-type name="NamespaceLevelEnum" flags="NamespaceLevelEnums" />
+        <enum-type name="MyNamespacedEnumClass" />
+
+        <value-type name="AnotherNamespaceStruct" />
+    </namespace-type>
+
+    <value-type name="SimpleStruct" />
+    <object-type name="SimpleObjectStruct" />
+    <value-type name="MyTemplate" />
+    <value-type name="MyTemplate2" />
+    <value-type name="MyTemplateWithTwoArgs" />
+    <value-type name="UnusedTemplate" />
+    <value-type name="EmptyStruct" />
+    <value-type name="NonCopiable" />
+    <enum-type name="GlobalEnum" />
+    <function signature="globalFunction()" />
+    <function signature="returnsPureAbstract()" />
+    <function signature="receivingPureAbstract(TestTargetNS::PureAbstract *)" />
+    <function signature="receivesStructAsOptionalArgument(EmptyStruct)" />
+    <function signature="receivesStructAsOptionalArgument2(EmptyStruct)" />
+    <object-type name="DoubleInheritance" />
+    <object-type name="Virtual1" />
+    <object-type name="Virtual2" />
+    <object-type name="DoubleInheritanceFromVirtuals" />
+
+    <object-type name="Cyclic1" />
+    <object-type name="Cyclic2" />
+    <object-type name="PureAbstractWithUnknownType" />
+
+    <namespace-type name="NameClashingNS1">
+        <value-type name="SimpleClash" />
+    </namespace-type>
+    <namespace-type name="NameClashingNS2">
+        <value-type name="SimpleClash" />
+    </namespace-type>
+
+    <object-type name="BaseClassWithFinalMethod" />
+</typesystem>

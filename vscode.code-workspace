@@ -1,0 +1,36 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": true,
+    "clangd.arguments": [
+      "-header-insertion=never"
+    ],
+    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json"
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "gdb-shiboken6",
+        "type": "lldb",
+        "request": "launch",
+        "program": "${workspaceFolder}/build-dev/3rdparty/shiboken/sources/shiboken6/generator/shiboken6",
+        "args": [
+          "--output-directory=/dartagnan/tests/generated/",
+          "--generator-set=dart",
+          "--skip-deprecated",
+          "-I/usr/include/x86_64-linux-gnu/qt6/",
+          "-I/usr/include/x86_64-linux-gnu/qt6/QtCore/",
+          "bindings_global.h",
+          "typesystem.xml"
+        ],
+        "cwd": "${workspaceFolder}/tests"
+      }
+    ]
+  }
+}

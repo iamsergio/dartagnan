@@ -1,0 +1,12 @@
+- Deleting temporary variables. They currently leak.
+- When overriding virtual C++ methods in dart, we only support int and void return types (yet).
+- Support nested C++ namespaces
+- Support global functions
+- Enums:
+  - Support global enums
+  - Support "enum class"
+  - Support other storage than int
+  - Figure out how to initialize enumerators in Dart. Currently we're working
+  around it with a class.
+- Support classes having protected members, currently the C wrapper can't access them.
+- Support forwarding argument when catching signals, currently arguments are lost

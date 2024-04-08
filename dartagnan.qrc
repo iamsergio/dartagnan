@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>snippets/pubspec.yaml</file>
+        <file>snippets/LibraryLoader.dart</file>
+        <file>snippets/methodIsOverridden.dart</file>
+        <file>snippets/ValueWrapper.h</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,3 @@
+[submodule "3rdparty/shiboken"]
+	path = 3rdparty/shiboken
+	url = git@github.com:iamsergio/pyside2-setup.git

@@ -1,0 +1,26 @@
+{
+    "version": 2,
+    "configurePresets": [
+        {
+            "name": "dev",
+            "displayName": "dev",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-dev",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "DARTAGNAN_DEVELOPER_BUILD": "ON"
+            }
+        },
+        {
+            "name": "release",
+            "displayName": "release",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            }
+        }
+    ]
+}

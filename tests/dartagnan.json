@@ -1,0 +1,20 @@
+{
+    "target_link_libraries": "TestTarget",
+    "pureVirtualClassOverrides": [
+        "PureAbstractWithUnknownType"
+    ],
+    "namespaces": [
+        {
+            "name": "ExplicitNamespace1",
+            "types": [
+                "NameClashingNS1::SimpleClash"
+            ]
+        },
+        {
+            "name": "ExplicitNamespace2",
+            "types": [
+                "NameClashingNS2::SimpleClash"
+            ]
+        }
+    ]
+}
